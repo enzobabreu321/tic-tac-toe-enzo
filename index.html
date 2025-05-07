@@ -1,1 +1,81 @@
 <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin:  15vh auto;
+            font-family: "Roboto", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+        table {
+            background-color: aqua;
+            min-width: 300px;
+            min-height: 300px;
+            border: solid aqua 15px;
+            border-radius: 30px;
+        }
+        td{
+            background-color: white;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 40px;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+    <body>
+        <section>
+            <table>
+                <tr>
+                    <td id="td1" onclick="adicionarTexto(this)"></td>  <td id="td2" onclick="adicionarTexto(this)"></td>  <td id="td3" onclick="adicionarTexto(this)"></td>
+                </tr>
+                <tr>
+                    <td id="td4" onclick="adicionarTexto(this)"></td>  <td id="td5" onclick="adicionarTexto(this)"></td>  <td id="td6" onclick="adicionarTexto(this)"></td>
+                </tr>
+                <tr>
+                    <td id="td7" onclick="adicionarTexto(this)"></td>  <td id="td8" onclick="adicionarTexto(this)"></td>  <td id="td9" onclick="adicionarTexto(this)"></td>
+                </tr>
+            </table>
+        </section>
+    </body>
+    <script type="text/javascript">
+        var playerText = "x"
+        function adicionarTexto(thetd) {
+            if (thetd.innerText === "") {
+            thetd.innerText = playerText;
+            playerText = playerText === "x" ? "o" : "x";
+            }
+        }
+        function checkerVitória() {
+            var td1 = document.querySelector("#td1");
+            var td2 = document.querySelector("#td2");
+            var td3 = document.querySelector("#td3");
+            var td4 = document.querySelector("#td4");
+            var td5 = document.querySelector("#td5");
+            var td6 = document.querySelector("#td6");
+            var td7 = document.querySelector("#td7");
+            var td8 = document.querySelector("#td8");
+            var td9 = document.querySelector("#td9");
+
+            const linhasGanhas = [
+                [td1,td2,td3],
+                [td4, td5, td6],
+                [td7,td8,td9],
+                [td1,td5,td9],
+                [td3,td5,td7],
+                [td2,td5,td8],
+                [td1, td4,td7],
+                [td3,td6,td9]
+            ]
+        }
+    </script>
+</html>
